@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-03-22T09:44:23.689Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="_jNDwWtyd3OtjsSPQhow" version="24.0.7" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-03-22T09:51:56.507Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="G3aCofpebZdxO7S307o1" version="24.0.7" type="github" pages="2">
   <diagram name="serverless" id="bz2cJXhlYBcJffawt7Kv">
     <mxGraphModel dx="1050" dy="565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -108,6 +108,12 @@
             <mxPoint x="635" y="458" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="_bplAM0HiLYQ9Z9dN7LO-1" value="{&quot;action&quot;: &quot;sendmessage&quot;, &quot;message&quot;: &quot;hello, everyone!&quot;}" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="360" y="60" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="_bplAM0HiLYQ9Z9dN7LO-4" value="Use the sendmessage route to send a message. Your info: {&quot;ConnectedAt&quot;:&quot;2022-01-25T18:50:04.673Z&quot;,&quot;Identity&quot;:{&quot;SourceIp&quot;:&quot;192.0.2.1&quot;,&quot;UserAgent&quot;:null},&quot;LastActiveAt&quot;:&quot;2022-01-25T18:50:07.642Z&quot;,&quot;connectionID&quot;:&quot;Mg_ugfpqPHcCIVA=&quot;}" style="text;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="140" y="90" width="560" height="70" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
@@ -134,11 +140,42 @@
             <mxPoint x="160" y="350" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="6g2W2QSspoGPn6mh1SmF-5" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cognito;" vertex="1" parent="1">
-          <mxGeometry x="530" y="60" width="78" height="78" as="geometry" />
+        <mxCell id="6g2W2QSspoGPn6mh1SmF-5" value="Cognito Identification" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cognito;" vertex="1" parent="1">
+          <mxGeometry x="332" y="140" width="78" height="78" as="geometry" />
         </mxCell>
         <mxCell id="6g2W2QSspoGPn6mh1SmF-6" value="Amplify + React Framework" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.amplify;" vertex="1" parent="1">
-          <mxGeometry x="190" y="310" width="78" height="78" as="geometry" />
+          <mxGeometry x="200" y="301" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="ExZvxduwD3NTuQLcTQ38-1" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/ui-essential-17/32/UI_Essential_Outline_1_essential-app-ui-messages-talk-128.png" vertex="1" parent="1">
+          <mxGeometry x="160" y="320" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ExZvxduwD3NTuQLcTQ38-2" value="Amazon S3" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
+          <mxGeometry x="330" y="430" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ExZvxduwD3NTuQLcTQ38-3" value="Chime SDK messaging" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.chime_sdk;" vertex="1" parent="1">
+          <mxGeometry x="430" y="301" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="ExZvxduwD3NTuQLcTQ38-4" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="290" as="sourcePoint" />
+            <mxPoint x="330" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ExZvxduwD3NTuQLcTQ38-5" value="Registration login / Authenticate" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ExZvxduwD3NTuQLcTQ38-4">
+          <mxGeometry x="-0.1796" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ExZvxduwD3NTuQLcTQ38-8" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="320" y="470" as="sourcePoint" />
+            <mxPoint x="240" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ExZvxduwD3NTuQLcTQ38-9" value="store images / files" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ExZvxduwD3NTuQLcTQ38-8">
+          <mxGeometry x="-0.3515" relative="1" as="geometry">
+            <mxPoint x="-44" y="12" as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
