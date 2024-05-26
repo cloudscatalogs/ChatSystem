@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-26T06:38:44.087Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="RHThCG3M2j5ChioPz2ph" version="24.3.0" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-05-26T06:51:35.751Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="iM0BGj6pdVm6rLgdxBF5" version="24.3.0" type="github" pages="2">
   <diagram name="serverless" id="bz2cJXhlYBcJffawt7Kv">
     <mxGraphModel dx="1050" dy="565" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -115,7 +115,21 @@
           <mxGeometry x="140" y="90" width="560" height="70" as="geometry" />
         </mxCell>
         <mxCell id="Q9tqnkqPoD4LKW9DeTYe-4" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Serverless&lt;/h1&gt;&lt;p&gt;Use Lamda λ for chat functions&lt;/p&gt;&lt;p&gt;Use DynamoDB for saving messages&lt;/p&gt;&lt;p&gt;API Gateway for connecting clients&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="580" y="492" width="180" height="148" as="geometry" />
+          <mxGeometry x="580" y="492" width="210" height="128" as="geometry" />
+        </mxCell>
+        <mxCell id="L9SJ8zGq5cZbFp5idbkM-1" value="Amazon S3" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#ffffff;fillColor=#232F3E;dashed=0;verticalLabelPosition=middle;verticalAlign=bottom;align=center;html=1;whiteSpace=wrap;fontSize=10;fontStyle=1;spacing=3;shape=mxgraph.aws4.productIcon;prIcon=mxgraph.aws4.s3;" vertex="1" parent="1">
+          <mxGeometry x="140" y="540" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="L9SJ8zGq5cZbFp5idbkM-2" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="L9SJ8zGq5cZbFp5idbkM-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="450" as="sourcePoint" />
+            <mxPoint x="190" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="L9SJ8zGq5cZbFp5idbkM-3" value="static content" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="L9SJ8zGq5cZbFp5idbkM-2">
+          <mxGeometry x="0.1022" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
