@@ -1,0 +1,101 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  StaticContentBucket:
+    Type: "AWS::S3::Bucket"
+    Properties:
+      BucketName: "my-static-content-bucket"
+      WebsiteConfiguration:
+        IndexDocument: "index.html"
+
+  MessagesTable:
+    Type: "AWS::DynamoDB::Table"
+    Properties:
+      TableName: "MessagesTable"
+      BillingMode: "PAY_PER_REQUEST"
+      AttributeDefinitions:
+        - AttributeName: "MessageID"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "MessageID"
+          KeyType: "HASH"
+
+  WebSocketApi:
+    Type: "AWS::ApiGatewayV2::Api"
+    Properties:
+      Name: "websocket-api"
+      ProtocolType: "WEBSOCKET"
+      RouteSelectionExpression: "$request.body.action"
+
+  ConnectRoute:
+    Type: "AWS::ApiGatewayV2::Route"
+    Properties:
+      ApiId: !Ref WebSocketApi
+      RouteKey: "$connect"
+      Target: !Sub "integrations/${ConnectIntegration}"
+
+  DefaultRoute:
+    Type: "AWS::ApiGatewayV2::Route"
+    Properties:
+      ApiId: !Ref WebSocketApi
+      RouteKey: "$default"
+      Target: !Sub "integrations/${DefaultIntegration}"
+
+  ConnectIntegration:
+    Type: "AWS::ApiGatewayV2::Integration"
+    Properties:
+      ApiId: !Ref WebSocketApi
+      IntegrationType: "AWS_PROXY"
+      IntegrationUri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ConnectFunction.Arn}/invocations"
+
+  DefaultIntegration:
+    Type: "AWS::ApiGatewayV2::Integration"
+    Properties:
+      ApiId: !Ref WebSocketApi
+      IntegrationType: "AWS_PROXY"
+      IntegrationUri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DefaultFunction.Arn}/invocations"
+
+  ConnectFunction:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      FunctionName: "ConnectHandler"
+      Handler: "index.handler"
+      Runtime: "nodejs18.x"
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Code:
+        S3Bucket: "lambda-code-bucket"
+        S3Key: "lambda_connect.zip"
+
+  DefaultFunction:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      FunctionName: "DefaultHandler"
+      Handler: "index.handler"
+      Runtime: "nodejs18.x"
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Code:
+        S3Bucket: "lambda-code-bucket"
+        S3Key: "lambda_default.zip"
+
+  LambdaExecutionRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      RoleName: "lambda_exec_role"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service: "lambda.amazonaws.com"
+            Action: "sts:AssumeRole"
+      Policies:
+        - PolicyName: "LambdaBasicExecution"
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: "Allow"
+                Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Resource: "arn:aws:logs:*:*:*"
